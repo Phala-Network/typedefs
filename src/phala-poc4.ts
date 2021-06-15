@@ -6,6 +6,7 @@ export default {
   "EthereumAddress": "H160",
   "EcdsaSignature": "[u8; 65]",
   "EthereumTxHash": "H256",
+  "RawSolution": "RawSolutionWith16",
   "WorkerStateEnum": {
     "_enum": {
       "Empty": null,

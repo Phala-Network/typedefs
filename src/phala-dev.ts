@@ -7,6 +7,7 @@ export default {
     "ResourceId": "[u8; 32]",
     "TokenId": "u256",
     "DepositNonce": "u64",
+    "RawSolution": "RawSolutionWith24",
     "WorkerStateEnum": {
       "_enum": {
         "Empty": null,
