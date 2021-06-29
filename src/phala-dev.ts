@@ -22,11 +22,12 @@ export default {
     },
     "Attestation": {
       "_enum": {
-        "SgxIas": {
-          "raReport": "Vec<u8>",
-          "signature": "Vec<u8>"
-        }
+        "SgxIas": "AttestationSgxIas"
       }
+    },
+    "AttestationSgxIas": {
+      "raReport": "Vec<u8>",
+      "signature": "Vec<u8>"
     },
     "SenderId": "MessageOrigin",
     "Path": "Vec<u8>",
