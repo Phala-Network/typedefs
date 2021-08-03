@@ -3,7 +3,7 @@
 export default {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
-  "ChainId": "u8",
+  "BridgeChainId": "u8",
   "ResourceId": "[u8; 32]",
   "TokenId": "u256",
   "DepositNonce": "u64",
