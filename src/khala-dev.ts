@@ -74,10 +74,11 @@ export default {
     "payoutCommission": "Option<Permill>",
     "ownerReward": "Balance",
     "cap": "Option<Balance>",
-    "poolAcc": "Balance",
+    "rewardAcc": "u128",
     "totalShares": "Balance",
     "totalStake": "Balance",
     "freeStake": "Balance",
+    "releasingStake": "Balance",
     "workers": "Vec<WorkerPublicKey>",
     "withdrawQueue": "Vec<WithdrawInfo>"
   },
@@ -109,7 +110,7 @@ export default {
     "pInstant": "u32",
     "iterations": "u64",
     "miningStartTime": "u64",
-    "updated_at": "u64"
+    "updatedAt": "u64"
   },
   "MinerState": {
     "_enum": {
@@ -117,7 +118,7 @@ export default {
       "MiningIdle": null,
       "MiningActive": null,
       "MiningUnresponsive": null,
-      "MiningCollingDown": null
+      "MiningCoolingDown": null
     }
   },
   "MinerStats": {
@@ -131,8 +132,9 @@ export default {
     "_enum": {
       "Registered": "NewGatekeeperEvent",
       "DispatchMasterKey": "DispatchMasterKeyEvent",
+      "MasterPubkeyAvailable": null,
       "NewRandomNumber": "RandomNumberEvent",
-      "UpdateTokenomic": "TokenomicParameters"
+      "TokenomicParametersChanged": "TokenomicParameters"
     }
   },
   "NewGatekeeperEvent": {
