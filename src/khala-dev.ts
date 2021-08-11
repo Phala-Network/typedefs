@@ -157,11 +157,12 @@ export default {
   "TokenomicParameters": {
     "phaRate": "U64F64Bits",
     "rho": "U64F64Bits",
-    "budgetPerSec": "U64F64Bits",
+    "budgetPerBlock": "U64F64Bits",
     "vMax": "U64F64Bits",
     "costK": "U64F64Bits",
     "costB": "U64F64Bits",
     "slashRate": "U64F64Bits",
+    "treasuryRatio": "U64F64Bits",
     "heartbeatWindow": "u32",
     "rigK": "U64F64Bits",
     "rigB": "U64F64Bits",
