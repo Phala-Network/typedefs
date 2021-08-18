@@ -1,147 +1,189 @@
 // SPDX-License-Identifier: Apache-2.0
 
 export default {
-    "Address": "MultiAddress",
-    "LookupSource": "MultiAddress",
-    "ChainId": "u8",
-    "ResourceId": "[u8; 32]",
-    "TokenId": "u256",
-    "DepositNonce": "u64",
-    "RawSolution": "RawSolutionWith24",
-    "EcdsaPublicKey": "[u8; 33]",
-    "WorkerPublicKey": "EcdsaPublicKey",
-    "ContractPublicKey": "EcdsaPublicKey",
-    "MessageOrigin": {
+  "Address": "MultiAddress",
+  "LookupSource": "MultiAddress",
+  "RawSolution": "RawSolutionWith24",
+  "BridgeChainId": "u8",
+  "ResourceId": "[u8; 32]",
+  "TokenId": "u256",
+  "DepositNonce": "u64",
+  "ProposalStatus": {
       "_enum": {
-        "Pallet": "Vec<u8>",
-        "Contract": "H256",
-        "Worker": "EcdsaPublicKey",
-        "AccountId": "H256",
-        "MultiLocation": "Vec<u8>"
+          "Initiated":null,
+          "Approved":null,
+          "Rejected":null
       }
-    },
-    "Attestation": {
-      "_enum": {
-        "SgxIas": "AttestationSgxIas"
-      }
-    },
-    "AttestationSgxIas": {
-      "raReport": "Vec<u8>",
-      "signature": "Vec<u8>"
-    },
-    "SenderId": "MessageOrigin",
-    "Path": "Vec<u8>",
-    "Topic": "Path",
-    "Message": {
-      "sender": "SenderId",
-      "destination": "Topic",
-      "payload": "Vec<u8>"
-    },
-    "SignedMessage": {
-      "message": "Message",
-      "sequence": "u64",
-      "signature": "Vec<u8>"
-    },
-    "MachineId": "[u8; 16]",
-    "PRuntimeInfo": {
-      "version": "u32",
-      "machine_id": "MachineId",
-      "pubkey": "WorkerPublicKey",
-      "features": "Vec<u32>"
-    },
-    "PoolState": {
-      "_enum": {
-        "Ready": null,
-        "Mining": null
-      }
-    },
-    "PoolInfo": {
-      "owner": "AccountId",
-      "cap": "Option<Balance>",
-      "commission": "Permill",
-      "state": "PoolState",
-      "total_raised": "Balance"
-    },
-    "ProposalStatus": {
-      "_enum": {
-        "Initiated": null,
-        "Approved": null,
-        "Rejected": null
-      }
-    },
-    "ProposalVotes": {
+  },
+  "ProposalVotes": {
       "votes_for": "Vec<AccountId>",
       "votes_against": "Vec<AccountId>",
       "status": "ProposalStatus",
       "expiry": "BlockNumber"
-    },
-    "Kitty": {
+  },
+  "Kitty": {
       "id": "Hash",
       "dna": "Hash",
       "price": "Balance",
       "gen": "u64"
-    },
-    "WorkerStateEnum": {
+  },
+  "Sr25519PublicKey": "[u8; 32]",
+  "MasterPublicKey": "Sr25519PublicKey",
+  "WorkerPublicKey": "Sr25519PublicKey",
+  "ContractPublicKey": "Sr25519PublicKey",
+  "EcdhPublicKey": "[u8; 32]",
+  "MessageOrigin": {
       "_enum": {
-        "Empty": null,
-        "Free": null,
-        "Gatekeeper": null,
-        "MiningPending": null,
-        "Mining": "BlockNumber",
-        "MiningStopping": null
+          "Pallet": "Vec<u8>",
+          "Contract": "H256",
+          "Worker": "Sr25519PublicKey",
+          "AccountId": "H256",
+          "MultiLocation": "Vec<u8>",
+          "Gatekeeper": null
       }
-    },
-    "WorkerInfo": {
-      "machineId": "Vec<u8>",
-      "pubkey": "Vec<u8>",
+  },
+  "Attestation": {
+      "_enum": {
+          "SgxIas": "AttestationSgxIas"
+      }
+  },
+  "AttestationSgxIas": {
+      "raReport": "Vec<u8>",
+      "signature": "Vec<u8>",
+      "rawSigningCert": "Vec<u8>"
+  },
+  "SenderId": "MessageOrigin",
+  "Path": "Vec<u8>",
+  "Topic": "Path",
+  "Message": {
+      "sender": "SenderId",
+      "destination": "Topic",
+      "payload": "Vec<u8>"
+  },
+  "SignedMessage": {
+      "message": "Message",
+      "sequence": "u64",
+      "signature": "Vec<u8>"
+  },
+  "MachineId": "[u8; 16]",
+  "WorkerRegistrationInfo": {
+      "version": "u32",
+      "machineId": "MachineId",
+      "pubkey": "WorkerPublicKey",
+      "ecdhPubkey": "EcdhPublicKey",
+      "genesisBlockHash": "H256",
+      "features": "Vec<u32>",
+      "operator": "Option<AccountId>"
+  },
+  "PoolInfo": {
+      "pid": "u64",
+      "owner": "AccountId",
+      "payoutCommission": "Option<Permill>",
+      "ownerReward": "Balance",
+      "cap": "Option<Balance>",
+      "rewardAcc": "u128",
+      "totalShares": "Balance",
+      "totalStake": "Balance",
+      "freeStake": "Balance",
+      "releasingStake": "Balance",
+      "workers": "Vec<WorkerPublicKey>",
+      "withdrawQueue": "Vec<WithdrawInfo>"
+  },
+  "WithdrawInfo": {
+      "user": "AccountId",
+      "shares": "Balance",
+      "startTime": "u64"
+  },
+  "WorkerInfo": {
+      "pubkey": "WorkerPublicKey",
+      "ecdhPubkey": "EcdhPublicKey",
+      "runtimeVersion": "u32",
       "lastUpdated": "u64",
-      "state": "WorkerStateEnum",
-      "score": "Option<Score>",
+      "operator": "Option<AccountId>",
       "confidenceLevel": "u8",
-      "runtimeVersion": "u32"
-    },
-    "Score": {
-      "overallScore": "u32",
+      "initialScore": "Option<u32>",
       "features": "Vec<u32>"
-    },
-    "StashInfo": {
-      "controller": "AccountId",
-      "payoutPrefs": "PayoutPrefs"
-    },
-    "PayoutPrefs": {
-      "commission": "u32",
-      "target": "AccountId"
-    },
-    "BlockRewardInfo": {
-      "seed": "U256",
-      "onlineTarget": "U256",
-      "computeTarget": "U256"
-    },
-    "RoundInfo": {
-      "round": "u32",
-      "startBlock": "BlockNumber"
-    },
-    "RoundStats": {
-      "round": "u32",
-      "onlineWorkers": "u32",
-      "computeWorkers": "u32",
-      "fracTargetOnlineReward": "u32",
-      "totalPower": "u32",
-      "fracTargetComputeReward": "u32"
-    },
-    "StashWorkerStats": {
-      "slash": "Balance",
-      "computeReceived": "Balance",
-      "onlineReceived": "Balance"
-    },
-    "MinerStatsDelta": {
-      "numWorker": "i32",
-      "numPower": "i32"
-    },
-    "PayoutReason": {
+  },
+  "MinerInfo": {
+      "state": "MinerState",
+      "ve": "u128",
+      "v": "u128",
+      "vUpdatedAt": "u64",
+      "benchmark": "Benchmark",
+      "coolDownStart": "u64",
+      "stats": "MinerStats"
+  },
+  "Benchmark": {
+      "pInstant": "u32",
+      "pInit": "u32",
+      "iterations": "u64",
+      "miningStartTime": "u64",
+      "updatedAt": "u64"
+  },
+  "MinerState": {
       "_enum": {
-        "OnlineReward": null,
-        "ComputeReward": null
+          "Ready":null,
+          "MiningIdle":null,
+          "MiningActive":null,
+          "MiningUnresponsive":null,
+          "MiningCoolingDown":null
       }
-    }
+  },
+  "MinerStats": {
+      "totalReward": "Balance"
+  },
+  "HeartbeatChallenge": {
+      "seed": "U256",
+      "onlineTarget": "U256"
+  },
+  "GatekeeperEvent": {
+      "_enum": {
+          "Registered": "NewGatekeeperEvent",
+          "DispatchMasterKey": "DispatchMasterKeyEvent",
+          "MasterPubkeyAvailable": null,
+          "NewRandomNumber": "RandomNumberEvent",
+          "TokenomicParametersChanged": "TokenomicParameters"
+      }
+  },
+  "NewGatekeeperEvent": {
+      "pubkey": "WorkerPublicKey",
+      "ecdhPubkey": "EcdhPublicKey",
+      "gatekeeperCount": "u32"
+  },
+  "DispatchMasterKeyEvent": {
+      "dest": "WorkerPublicKey",
+      "ecdhPubkey": "EcdhPublicKey",
+      "encryptedMasterKey": "Vec<u8>",
+      "iv": "[u8; 12]"
+  },
+  "RandomNumberEvent": {
+      "blockNumber": "u32",
+      "randomNumber": "[u8; 32]",
+      "lastRandomNumber": "[u8; 32]"
+  },
+  "TokenomicParameters": {
+      "phaRate": "U64F64Bits",
+      "rho": "U64F64Bits",
+      "budgetPerBlock": "U64F64Bits",
+      "vMax": "U64F64Bits",
+      "costK": "U64F64Bits",
+      "costB": "U64F64Bits",
+      "slashRate": "U64F64Bits",
+      "treasuryRatio": "U64F64Bits",
+      "heartbeatWindow": "u32",
+      "rigK": "U64F64Bits",
+      "rigB": "U64F64Bits",
+      "re": "U64F64Bits",
+      "k": "U64F64Bits",
+      "kappa": "U64F64Bits"
+  },
+  "TokenomicParams": "TokenomicParameters",
+  "U64F64Bits": "u128",
+  "UserStakeInfo": {
+      "user": "AccountId",
+      "locked": "Balance",
+      "shares": "Balance",
+      "availableRewards": "Balance",
+      "rewardDebt": "Balance"
+  }
 }

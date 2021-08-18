@@ -19,5 +19,14 @@ export default {
     "votes_against": "Vec<AccountId>",
     "status": "ProposalStatus",
     "expiry": "BlockNumber"
+  },
+  "ProxyType": {
+    "_enum": [
+      'Any',
+      'NonTransfer',
+      'CancelProxy',
+      'Governance',
+      'Collator'
+    ]
   }
 }

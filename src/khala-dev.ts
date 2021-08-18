@@ -20,6 +20,15 @@ export default {
     "status": "ProposalStatus",
     "expiry": "BlockNumber"
   },
+  "ProxyType": {
+    "_enum": [
+      'Any',
+      'NonTransfer',
+      'CancelProxy',
+      'Governance',
+      'Collator'
+    ]
+  },
   "Sr25519PublicKey": "[u8; 32]",
   "MasterPublicKey": "Sr25519PublicKey",
   "WorkerPublicKey": "Sr25519PublicKey",
