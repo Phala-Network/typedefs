@@ -136,11 +136,24 @@ export default {
     "seed": "U256",
     "onlineTarget": "U256"
   },
+  "KeyDistribution": {
+    "_enum": {
+      "MasterKeyDistribution": "DispatchMasterKeyEvent",
+    }
+  },
+  "GatekeeperLaunch": {
+    "_enum": {
+      "FirstGatekeeper": "NewGatekeeperEvent",
+      "MasterPubkeyOnChain": null,
+    }
+  },
+  "GatekeeperChange": {
+    "_enum": {
+      "GatekeeperRegistered": "NewGatekeeperEvent",
+    }
+  },
   "GatekeeperEvent": {
     "_enum": {
-      "Registered": "NewGatekeeperEvent",
-      "DispatchMasterKey": "DispatchMasterKeyEvent",
-      "MasterPubkeyAvailable": null,
       "NewRandomNumber": "RandomNumberEvent",
       "TokenomicParametersChanged": "TokenomicParameters"
     }
@@ -148,7 +161,6 @@ export default {
   "NewGatekeeperEvent": {
     "pubkey": "WorkerPublicKey",
     "ecdhPubkey": "EcdhPublicKey",
-    "gatekeeperCount": "u32"
   },
   "DispatchMasterKeyEvent": {
     "dest": "WorkerPublicKey",
