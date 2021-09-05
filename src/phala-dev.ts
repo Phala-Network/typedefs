@@ -93,10 +93,9 @@ export default {
     "sequence": "u64",
     "signature": "Vec<u8>"
   },
-  "MachineId": "[u8; 16]",
   "WorkerRegistrationInfo": {
     "version": "u32",
-    "machineId": "MachineId",
+    "machineId": "Vec<u8>",
     "pubkey": "WorkerPublicKey",
     "ecdhPubkey": "EcdhPublicKey",
     "genesisBlockHash": "H256",
@@ -166,18 +165,18 @@ export default {
   },
   "KeyDistribution": {
     "_enum": {
-      "MasterKeyDistribution": "DispatchMasterKeyEvent",
+      "MasterKeyDistribution": "DispatchMasterKeyEvent"
     }
   },
   "GatekeeperLaunch": {
     "_enum": {
       "FirstGatekeeper": "NewGatekeeperEvent",
-      "MasterPubkeyOnChain": null,
+      "MasterPubkeyOnChain": null
     }
   },
   "GatekeeperChange": {
     "_enum": {
-      "GatekeeperRegistered": "NewGatekeeperEvent",
+      "GatekeeperRegistered": "NewGatekeeperEvent"
     }
   },
   "GatekeeperEvent": {
@@ -188,7 +187,7 @@ export default {
   },
   "NewGatekeeperEvent": {
     "pubkey": "WorkerPublicKey",
-    "ecdhPubkey": "EcdhPublicKey",
+    "ecdhPubkey": "EcdhPublicKey"
   },
   "DispatchMasterKeyEvent": {
     "dest": "WorkerPublicKey",
