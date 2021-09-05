@@ -6,6 +6,8 @@ import phalaDev from './phala-dev';
 import khala from './khala';
 import khalaDev from './khala-dev';
 
+import versionedKhala from './versioned-khala';
+
 // alphabetical
 export const typesChain = {
   'Khala': khala,
@@ -22,5 +24,7 @@ export {
   phalaDev,
 
   khala,
-  khalaDev
+  khalaDev,
+
+  versionedKhala,
 }
