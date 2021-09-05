@@ -4,8 +4,36 @@ export default {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
   "BridgeChainId": "u8",
+  "BridgeEvent": {
+    "_enum": {
+      "FungibleTransfer": "FungibleTransfer",
+      "NonFungibleTransfer": "NonFungibleTransfer",
+      "GenericTransfer": "GenericTransfer"
+    }
+  },
+  "FungibleTransfer": {
+    "dest_id": "BridgeChainId",
+    "nonce": "DepositNonce",
+    "resource_id": "ResourceId",
+    "amount": "U256",
+    "recipient": "Vec<u8>"
+  },
+  "NonFungibleTransfer": {
+    "dest_id": "BridgeChainId",
+    "nonce": "DepositNonce",
+    "resource_id": "ResourceId",
+    "token_id": "Vec<u8>",
+    "recipient": "Vec<u8>",
+    "metadata": "Vec<u8>"
+  },
+  "GenericTransfer": {
+    "dest_id": "BridgeChainId",
+    "nonce": "DepositNonce",
+    "resource_id": "ResourceId",
+    "metadata": "Vec<u8>"
+  },
   "ResourceId": "[u8; 32]",
-  "TokenId": "u256",
+  "TokenId": "U256",
   "DepositNonce": "u64",
   "ProposalStatus": {
     "_enum": {
@@ -22,11 +50,11 @@ export default {
   },
   "ProxyType": {
     "_enum": [
-      'Any',
-      'NonTransfer',
-      'CancelProxy',
-      'Governance',
-      'Collator'
+      "Any",
+      "NonTransfer",
+      "CancelProxy",
+      "Governance",
+      "Collator"
     ]
   },
   "Sr25519PublicKey": "[u8; 32]",
@@ -140,18 +168,18 @@ export default {
   },
   "KeyDistribution": {
     "_enum": {
-      "MasterKeyDistribution": "DispatchMasterKeyEvent",
+      "MasterKeyDistribution": "DispatchMasterKeyEvent"
     }
   },
   "GatekeeperLaunch": {
     "_enum": {
       "FirstGatekeeper": "NewGatekeeperEvent",
-      "MasterPubkeyOnChain": null,
+      "MasterPubkeyOnChain": null
     }
   },
   "GatekeeperChange": {
     "_enum": {
-      "GatekeeperRegistered": "NewGatekeeperEvent",
+      "GatekeeperRegistered": "NewGatekeeperEvent"
     }
   },
   "GatekeeperEvent": {
@@ -162,7 +190,7 @@ export default {
   },
   "NewGatekeeperEvent": {
     "pubkey": "WorkerPublicKey",
-    "ecdhPubkey": "EcdhPublicKey",
+    "ecdhPubkey": "EcdhPublicKey"
   },
   "DispatchMasterKeyEvent": {
     "dest": "WorkerPublicKey",
