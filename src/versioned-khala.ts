@@ -21,30 +21,38 @@ const sharedTypes = {
     "votes_against": "Vec<AccountId>",
     "status": "ProposalStatus",
     "expiry": "BlockNumber"
-  },
-  "ProxyType": {
-    "_enum": [
-      'Any',
-      'NonTransfer',
-      'CancelProxy',
-      'Governance',
-      'Collator'
-    ]
   }
 };
 
-// https://khala.subscan.io/event?address=&module=parachainsystem&event=validationfunctionapplied&startDate=&endDate=
 const versioned: OverrideVersionedType[] = [
   {
-    minmax: [0, 182238],
+    minmax: [0, 10],
     types: {
       "ChainId": "u8",
+      "ProxyType": {
+        "_enum": [
+          'Any',
+          'NonTransfer',
+          'CancelProxy',
+          'Governance',
+          'Collator'
+        ]
+      },
       ...sharedTypes
     }
   },
   {
-    minmax: [182239, undefined],
+    minmax: [11, undefined],
     types: {
+      "ProxyType": {
+        "_enum": [
+          'Any',
+          'NonTransfer',
+          'CancelProxy',
+          'Governance',
+          'Collator'
+        ]
+      },
       ...sharedTypes
     }
   },
