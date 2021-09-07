@@ -3,6 +3,7 @@
 export default {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
+  "Keys": "AccountId",
   "BridgeChainId": "u8",
   "BridgeEvent": {
     "_enum": {

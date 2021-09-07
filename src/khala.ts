@@ -3,6 +3,7 @@
 export default {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
+  "Keys": "AccountId",
   "BridgeChainId": "u8",
   "ResourceId": "[u8; 32]",
   "TokenId": "u256",
