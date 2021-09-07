@@ -54,7 +54,8 @@ export default {
       "NonTransfer",
       "CancelProxy",
       "Governance",
-      "Collator"
+      "Collator",
+      "StakePoolManager"
     ]
   },
   "Sr25519PublicKey": "[u8; 32]",
