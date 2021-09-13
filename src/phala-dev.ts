@@ -141,11 +141,11 @@ export default {
     "stats": "MinerStats"
   },
   "Benchmark": {
-    "pInstant": "u32",
     "pInit": "u32",
+    "pInstant": "u32",
     "iterations": "u64",
     "miningStartTime": "u64",
-    "updatedAt": "u64"
+    "challengeTimeLast": "u64"
   },
   "MinerState": {
     "_enum": {
@@ -165,18 +165,18 @@ export default {
   },
   "KeyDistribution": {
     "_enum": {
-      "MasterKeyDistribution": "DispatchMasterKeyEvent"
+      "MasterKeyDistribution": "DispatchMasterKeyEvent",
     }
   },
   "GatekeeperLaunch": {
     "_enum": {
       "FirstGatekeeper": "NewGatekeeperEvent",
-      "MasterPubkeyOnChain": null
+      "MasterPubkeyOnChain": null,
     }
   },
   "GatekeeperChange": {
     "_enum": {
-      "GatekeeperRegistered": "NewGatekeeperEvent"
+      "GatekeeperRegistered": "NewGatekeeperEvent",
     }
   },
   "GatekeeperEvent": {
@@ -187,7 +187,7 @@ export default {
   },
   "NewGatekeeperEvent": {
     "pubkey": "WorkerPublicKey",
-    "ecdhPubkey": "EcdhPublicKey"
+    "ecdhPubkey": "EcdhPublicKey",
   },
   "DispatchMasterKeyEvent": {
     "dest": "WorkerPublicKey",
