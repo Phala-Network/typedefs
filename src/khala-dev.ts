@@ -4,7 +4,6 @@ export default {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
   "Keys": "AccountId",
-  "ChainId": "u8",
   "BridgeChainId": "u8",
   "BridgeEvent": {
     "_enum": {
