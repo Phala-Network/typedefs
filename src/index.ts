@@ -10,7 +10,7 @@ import versionedKhala from './versioned-khala';
 
 // alphabetical
 export const typesChain = {
-  'Khala': versionedKhala,
+  'Khala': khala,
   'Khala Testnet': khalaDev,
   'Khala Local Testnet': khalaDev,
   'Phala PoC-Next': phalaDev,
