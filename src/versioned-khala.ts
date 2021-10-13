@@ -51,6 +51,10 @@ const sharedTypes = {
     "status": "ProposalStatus",
     "expiry": "BlockNumber"
   },
+  "AssetInfo": {
+    "dest_id": "BridgeChainId",
+    "asset_identity": "Vec<u8>"
+  },
   "ProxyType": {
     "_enum": [
       "Any",
