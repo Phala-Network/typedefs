@@ -15,24 +15,24 @@ const sharedTypes = {
     }
   },
   "FungibleTransfer": {
-    "dest_id": "BridgeChainId",
+    "destId": "BridgeChainId",
     "nonce": "DepositNonce",
-    "resource_id": "ResourceId",
+    "resourceId": "ResourceId",
     "amount": "U256",
     "recipient": "Vec<u8>"
   },
   "NonFungibleTransfer": {
-    "dest_id": "BridgeChainId",
+    "destId": "BridgeChainId",
     "nonce": "DepositNonce",
-    "resource_id": "ResourceId",
-    "token_id": "Vec<u8>",
+    "resourceId": "ResourceId",
+    "tokenId": "Vec<u8>",
     "recipient": "Vec<u8>",
     "metadata": "Vec<u8>"
   },
   "GenericTransfer": {
-    "dest_id": "BridgeChainId",
+    "destId": "BridgeChainId",
     "nonce": "DepositNonce",
-    "resource_id": "ResourceId",
+    "resourceId": "ResourceId",
     "metadata": "Vec<u8>"
   },
   "ResourceId": "[u8; 32]",
@@ -52,8 +52,8 @@ const sharedTypes = {
     "expiry": "BlockNumber"
   },
   "AssetInfo": {
-    "dest_id": "BridgeChainId",
-    "asset_identity": "Vec<u8>"
+    "destId": "BridgeChainId",
+    "assetIdentity": "Vec<u8>"
   },
   "ProxyType": {
     "_enum": [
