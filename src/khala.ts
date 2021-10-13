@@ -45,8 +45,8 @@ export default {
     }
   },
   "ProposalVotes": {
-    "votes_for": "Vec<AccountId>",
-    "votes_against": "Vec<AccountId>",
+    "votesFor": "Vec<AccountId>",
+    "votesAgainst": "Vec<AccountId>",
     "status": "ProposalStatus",
     "expiry": "BlockNumber"
   },
@@ -174,18 +174,18 @@ export default {
   },
   "KeyDistribution": {
     "_enum": {
-      "MasterKeyDistribution": "DispatchMasterKeyEvent",
+      "MasterKeyDistribution": "DispatchMasterKeyEvent"
     }
   },
   "GatekeeperLaunch": {
     "_enum": {
       "FirstGatekeeper": "NewGatekeeperEvent",
-      "MasterPubkeyOnChain": null,
+      "MasterPubkeyOnChain": null
     }
   },
   "GatekeeperChange": {
     "_enum": {
-      "GatekeeperRegistered": "NewGatekeeperEvent",
+      "GatekeeperRegistered": "NewGatekeeperEvent"
     }
   },
   "GatekeeperEvent": {
@@ -196,7 +196,7 @@ export default {
   },
   "NewGatekeeperEvent": {
     "pubkey": "WorkerPublicKey",
-    "ecdhPubkey": "EcdhPublicKey",
+    "ecdhPubkey": "EcdhPublicKey"
   },
   "DispatchMasterKeyEvent": {
     "dest": "WorkerPublicKey",

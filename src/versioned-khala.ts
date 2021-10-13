@@ -46,8 +46,8 @@ const sharedTypes = {
     }
   },
   "ProposalVotes": {
-    "votes_for": "Vec<AccountId>",
-    "votes_against": "Vec<AccountId>",
+    "votesFor": "Vec<AccountId>",
+    "votesAgainst": "Vec<AccountId>",
     "status": "ProposalStatus",
     "expiry": "BlockNumber"
   },
@@ -197,7 +197,7 @@ const sharedTypes = {
   },
   "NewGatekeeperEvent": {
     "pubkey": "WorkerPublicKey",
-    "ecdhPubkey": "EcdhPublicKey",
+    "ecdhPubkey": "EcdhPublicKey"
   },
   "DispatchMasterKeyEvent": {
     "dest": "WorkerPublicKey",
