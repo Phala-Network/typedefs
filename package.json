@@ -16,8 +16,5 @@
     },
     "files": [
         "dist/**/*"
-    ],
-    "dependencies": {
-        "@polkadot/types": "^5.7.1"
-    }
+    ]
 }

@@ -1,7 +1,5 @@
 /* eslint-disable sort-keys */
 
-import type { OverrideVersionedType } from '@polkadot/types/types';
-
 const sharedTypes = {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
@@ -237,7 +235,7 @@ const sharedTypes = {
   }
 };
 
-const versioned: OverrideVersionedType[] = [
+const versioned = [
   {
     minmax: [0, 10],
     types: {
