@@ -3,6 +3,7 @@
 export default {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
+  "DispatchErrorModule": "DispatchErrorModuleU8",
   "Keys": "AccountId",
   "ChainId": "u8",
   "BridgeChainId": "u8",

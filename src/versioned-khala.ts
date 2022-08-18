@@ -3,6 +3,7 @@
 const sharedTypes = {
   "Address": "MultiAddress",
   "LookupSource": "MultiAddress",
+  "DispatchErrorModule": "DispatchErrorModuleU8",
   "Keys": "AccountId",
   "BridgeChainId": "u8",
   "BridgeEvent": {
