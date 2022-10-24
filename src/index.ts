@@ -28,3 +28,5 @@ export {
 
   versionedKhala,
 }
+
+export const typesBundle = {alias: {}, rpc: {}, types: versionedKhala}
